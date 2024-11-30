@@ -63,6 +63,8 @@ using OsEngine.Market.Servers.BitMart;
 using OsEngine.Market.Servers.BitMartFutures;
 using OsEngine.Market.Servers.MoexFixFastCurrency;
 using OsEngine.Market.Servers.MoexFixFastTwimeFutures;
+using OsEngine.Market.Servers.LBank.LBankFutures;
+
 
 namespace OsEngine.Market
 {
@@ -211,7 +213,8 @@ namespace OsEngine.Market
                 serverTypes.Add(ServerType.BitMartFutures);
                 serverTypes.Add(ServerType.MoexFixFastCurrency);
                 serverTypes.Add(ServerType.MoexFixFastTwimeFutures);
-                
+                serverTypes.Add(ServerType.LBankFutures);
+
                 serverTypes.Add(ServerType.AstsBridge);
 
 
@@ -312,6 +315,7 @@ namespace OsEngine.Market
                 serverTypes.Add(ServerType.Woo);
                 serverTypes.Add(ServerType.BitGetSpot);
                 serverTypes.Add(ServerType.BitGetFutures);
+                serverTypes.Add(ServerType.LBankFutures);
 
                 return serverTypes;
             }
@@ -596,6 +600,10 @@ namespace OsEngine.Market
                 else if (type == ServerType.BitMartFutures)
                 {
                     newServer = new BitMartFuturesServer();
+                }
+                else if (type == ServerType.LBankFutures)
+                {
+                    newServer = new LBankFuturesServer();
                 }
 
                 if (newServer == null)
@@ -1205,6 +1213,10 @@ namespace OsEngine.Market
                 {
                     serverPermission = new BitMexServerPermission();
                 }
+                else if (type == ServerType.LBankFutures)
+                {
+                    serverPermission = new LBankFuturesServerPermission();
+                }
 
                 if (serverPermission != null)
                 {
@@ -1648,5 +1660,10 @@ namespace OsEngine.Market
         /// FIX/FAST/TWIME for MOEX Futures
         /// </summary>
         MoexFixFastTwimeFutures,
+
+        /// <summary>
+        /// LBankFutures exchange
+        /// </summary>
+        LBankFutures,
     }
 }

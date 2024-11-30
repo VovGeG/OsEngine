@@ -785,6 +785,8 @@
     <Compile Include="Market\Servers\KuCoin\KuCoinSpot\Json\ResponseWebSocketMessageAction.cs" />
     <Compile Include="Market\Servers\KuCoin\KuCoinSpot\KuCoinSpotServer.cs" />
     <Compile Include="Market\Servers\KuCoin\KuCoinSpot\KuCoinSpotServerPermission.cs" />
+    <Compile Include="Market\Servers\LBank\LBankFutures\LBankFuturesServer.cs" />
+    <Compile Include="Market\Servers\LBank\LBankFutures\LBankFuturesServerPermission.cs" />
     <Compile Include="Market\Servers\Lmax\LmaxEntity\FixMessageCreator.cs" />
     <Compile Include="Market\Servers\Lmax\LmaxEntity\FixMessageParser.cs" />
     <Compile Include="Market\Servers\Lmax\LmaxEntity\RejectReasons.cs" />
@@ -2000,7 +2002,9 @@
     <Resource Include="Images\MainWIndow\alor1.png" />
     <Resource Include="Images\MainWIndow\alor2.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Market\Servers\LBank\LBankFutures\Entity\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Grpc.Core.2.46.6\build\net45\Grpc.Core.targets" Condition="Exists('..\packages\Grpc.Core.2.46.6\build\net45\Grpc.Core.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
